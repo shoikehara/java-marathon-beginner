@@ -8,8 +8,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/marathon")
 public class NameReceiveController {
 	@RequestMapping("")
-	public String index(String name,Model model) {
-		model.addAttribute("name",name);
+	public String index() {
+		return "inputname";
+	}
+	@RequestMapping("/outputname")
+	public String outputname(String name,Model model) {
+		model.addAttribute(name);
 		return "outputname";
 	}
 }
