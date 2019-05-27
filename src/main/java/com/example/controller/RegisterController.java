@@ -11,15 +11,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class RegisterController {
 	@Autowired
 	ServletContext application;
-	
+
 	@RequestMapping("")
 	public String index() {
 		return "buygoods";
 	}
+
 	@RequestMapping("/totalprice")
-	public String totalPrice(Integer goods1,Integer goods2,Integer goods3) {
-		application.setAttribute("taxfree",goods1+goods2+goods3);
-		application.setAttribute("tax",(goods1+goods2+goods3)*1.08);
+	public String totalPrice(Integer goods1, Integer goods2, Integer goods3) {
+		int total = goods1 + goods2 + goods3;
+		application.setAttribute("taxfree", total);
+		application.setAttribute("tax", total * 1.08);
 		return "totalprice";
 	}
 }
