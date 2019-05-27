@@ -7,7 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/buygoods")
+@RequestMapping("/register")
 public class RegisterController {
 	@Autowired
 	ServletContext application;
