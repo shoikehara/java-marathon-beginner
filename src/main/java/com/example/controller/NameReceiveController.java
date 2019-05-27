@@ -13,7 +13,7 @@ public class NameReceiveController {
 	}
 	@RequestMapping("/outputname")
 	public String outputname(String name,Model model) {
-		model.addAttribute(name);
+		model.addAttribute("name",name);
 		return "outputname";
 	}
 }
